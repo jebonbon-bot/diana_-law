@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Расчёт расходов на ребёнка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAE4D8;--card:#F7F4ED;--ink:#1E2D50;--mute:#56617d;--line:#cfc7b6;--accent:#1E2D50;--on-accent:#EAE4D8;--hi:#B1C8E3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E2D50;--card:#283A63;--ink:#EAE4D8;--mute:#aab6cf;--line:#3b4e79;--accent:#B1C8E3;--on-accent:#1E2D50;--hi:#2f4472}}
+:root[data-theme="dark"]{--bg:#1E2D50;--card:#283A63;--ink:#EAE4D8;--mute:#aab6cf;--line:#3b4e79;--accent:#B1C8E3;--on-accent:#1E2D50;--hi:#2f4472}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 56px}
+.top{padding:28px 0 20px;border-bottom:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:14px}
+.mono{flex:none;width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-size:20px}
+.who b{display:block;font-size:19px;line-height:1.2}
+.who span{color:var(--mute);font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.links a{color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:15px}
+.links a:hover,.links a:focus-visible{background:var(--hi);outline:none}
+h1{font-size:30px;line-height:1.15;margin:28px 0 6px}
+.sub{color:var(--mute);margin:0}
+h2{font-size:21px;margin:34px 0 10px}
+ol{padding-left:22px;margin:8px 0}
+li{margin:4px 0}
+.hint{background:var(--hi);border-radius:10px;padding:12px 14px;font-size:16px}
+label{display:block;font-size:15px;color:var(--mute);margin:12px 0 4px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.tbl{overflow-x:auto;margin-top:8px}
+table{width:100%;min-width:480px;border-collapse:collapse;background:var(--card);border:1px solid var(--line)}
+th{font-size:14px;font-weight:500;color:var(--mute);text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+td{padding:6px 8px;border-bottom:1px solid var(--line)}
+td:first-child{min-width:150px}
+td input{padding:8px 10px;text-align:right}
+td.r{text-align:right;white-space:nowrap}
+.tot{display:flex;justify-content:space-between;align-items:baseline;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:8px;margin-top:8px}
+.tot b{font-size:22px}
+.tot.big{background:var(--hi)}
+button{font:inherit;font-weight:500;background:var(--accent);color:var(--on-accent);border:0;border-radius:10px;padding:14px 20px;width:100%;cursor:pointer;margin-top:12px}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+button.ok{background:var(--mute)}
+.small{font-size:14px;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tags span{background:var(--hi);border-radius:999px;padding:4px 12px;font-size:14px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stats b{font-size:30px;display:block;line-height:1}
+.stats span{font-size:14px;color:var(--mute)}
+.about p{margin:10px 0}
+.about a{color:var(--ink)}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+<div class="who"><div class="mono">ДА</div><div><b>Диана Арямнова</b><span>юрист · семья и наследство · Санкт-Петербург</span></div></div>
+<div class="links">
+<a href="tel:+79219268088">+7 921 926 8088</a>
+<a href="mailto:da@diana-a.ru">da@diana-a.ru</a>
+<a href="https://t.me/Diana_A_LAW">@Diana_A_LAW</a>
+</div>
+<p class="small" style="margin:10px 0 0">тел. / MAX: +7 921 926 8088</p>
+</div>
+
+<h1>Расчёт расходов на ребёнка</h1>
+<p class="sub">для подготовки дела о взыскании алиментов</p>
+
+<h2>Зачем это нужно</h2>
+<p>Суд учитывает, сколько реально уходит на ребёнка. Ваш расчёт покажет, какую сумму обоснованно просить.</p>
+
+<h2>Как заполнить</h2>
+<ol>
+<li>Пишите примерные суммы, до рубля не нужно.</li>
+<li>Траты раз в год вносите в поле «Раз в год».</li>
+<li>Нажмите «Скопировать расчёт» и отправьте в MAX или Telegram.</li>
+</ol>
+<div class="hint">Данные остаются только на вашем телефоне, пока вы сами их не отправите.</div>
+
+<h2>Ваши данные</h2>
+<label for="f-name">Ваше имя</label><input id="f-name" data-k="name" autocomplete="name">
+<label for="f-kids">Дети: имя и возраст</label><input id="f-kids" data-k="kids">
+<label for="f-city">Город</label><input id="f-city" data-k="city" autocomplete="address-level2">
+
+<h2>Расходы на ребёнка</h2>
+<div class="tbl"><table>
+<thead><tr><th>Категория</th><th>В месяц, ₽</th><th>Раз в год, ₽</th><th>Итого в месяц</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+<div class="tot"><span>Итого в месяц</span><b id="tm">0 ₽</b></div>
+<div class="tot big"><span>Итого в год</span><b id="ty">0 ₽</b></div>
+
+<h2>О втором родителе</h2>
+<p>Эти ответы помогут юристу выбрать способ взыскания или изменения размера алиментов: доля от дохода, твёрдая сумма или их сочетание.</p>
+<label for="f-job">Официально ли он (она) трудоустроен(а)?</label>
+<select id="f-job" data-k="job"><option value="">Выберите</option><option>Да, официально</option><option>Нет, работает неофициально</option><option>Не работает</option><option>Не знаю</option></select>
+<label for="f-inc">Примерный доход в месяц, ₽</label><input id="f-inc" data-k="inc" inputmode="numeric">
+<label for="f-pay">Платит ли что-то на ребёнка сейчас?</label>
+<select id="f-pay" data-k="pay"><option value="">Выберите</option><option>Платит регулярно</option><option>Платит нерегулярно</option><option>Не платит</option></select>
+<label for="f-doc">Есть ли соглашение или судебный приказ об алиментах?</label>
+<select id="f-doc" data-k="doc"><option value="">Выберите</option><option>Нет</option><option>Есть соглашение</option><option>Есть судебный приказ или решение</option></select>
+<label for="f-more">Другие дети, имущество, долги, всё, что важно</label><textarea id="f-more" data-k="more" rows="3"></textarea>
+
+<h2>Отправьте расчёт</h2>
+<p>Нажмите кнопку, затем вставьте текст в чат MAX с номером +7 921 926 8088 или напишите в Telegram @Diana_A_LAW. Юрист изучит расчёт и свяжется с вами, чтобы обсудить следующий шаг.</p>
+<button id="copy" type="button">Скопировать расчёт</button>
+<p class="small" style="margin-top:12px">Расчёт предварительный. Окончательный размер алиментов определяет суд с учётом доходов и положения обоих родителей.</p>
+
+<div class="about">
+<h2>О юристе</h2>
+<div class="stats"><div><b>15+</b><span>лет практикующий юрист</span></div><div><b>6+</b><span>лет руководитель юридической фирмы</span></div></div>
+<p>Диана Сергеевна Арямнова специализируется на семейном и наследственном праве, имущественном планировании, в том числе при передаче активов преемникам при наследственном событии.</p>
+<p><b>Образование.</b> Юридический факультет СПбГУ, бакалавр и магистр юриспруденции.</p>
+<p><b>Переговорщик.</b> Авторский курс Александра Дмитриевича Карпенко «Стратегические командные переговоры».</p>
+<p><b>Повышение квалификации.</b> Философский факультет СПбГУ (медиатор), Ассоциация 4Legal (медиатор).</p>
+<p>Co-founder образовательного проекта Высшая школа НЕО: дискуссии для юристов и адвокатов, в том числе при сотрудничестве с Федеральной нотариальной палатой. Соорганизатор Бизнес Форума «Наследники». Спикер конференций.</p>
+<div class="tags"><span>развод</span><span>раздел имущества</span><span>алименты</span><span>место жительства детей</span><span>брачный договор</span><span>наследство</span></div>
+<p><a href="https://diana-aryamnova.ru/#popup:diplomy">Квалификация и образование</a></p>
+<p class="small">Офис: Санкт-Петербург, ул. Савушкина, 126, Атлантик Сити.</p>
+</div>
+
+<footer class="small">Диана Арямнова · юрист · семья, наследство, медиация · г. Санкт-Петербург</footer>
+</div>
+
+<script>
+var CATS=["Питание","Одежда и обувь","Жильё и коммунальные платежи (доля ребёнка)","Детский сад, школа, репетиторы","Кружки и секции","Лекарства и врачи","Транспорт","Связь и интернет","Отдых и поездки","Игрушки, развлечения, подарки","Гигиена и бытовое","Другое"];
+var KEY="raschet-alimenty",st={};
+try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){st={}}
+function num(v){v=parseFloat(String(v||"").replace(/\s/g,"").replace(",","."));return isNaN(v)?0:v}
+function fmt(n){return Math.round(n).toLocaleString("ru-RU")+" ₽"}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var body=document.getElementById("rows");
+CATS.forEach(function(c,i){
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td>'+c+'</td><td><input inputmode="numeric" aria-label="'+c+', в месяц" data-m="'+i+'"></td><td><input inputmode="numeric" aria-label="'+c+', раз в год" data-y="'+i+'"></td><td class="r" id="r'+i+'">0 ₽</td>';
+  body.appendChild(tr);
+});
+function calc(){
+  var tm=0;
+  CATS.forEach(function(c,i){
+    var m=num(st["m"+i]),y=num(st["y"+i]),t=m+y/12;
+    document.getElementById("r"+i).textContent=fmt(t);tm+=t;
+  });
+  document.getElementById("tm").textContent=fmt(tm);
+  document.getElementById("ty").textContent=fmt(tm*12);
+  return tm;
+}
+document.querySelectorAll("input,select,textarea").forEach(function(el){
+  var k=el.dataset.k||(el.dataset.m!==undefined?"m"+el.dataset.m:el.dataset.y!==undefined?"y"+el.dataset.y:null);
+  if(!k)return;
+  if(st[k])el.value=st[k];
+  el.addEventListener("input",function(){st[k]=el.value;save();calc()});
+});
+calc();
+document.getElementById("copy").addEventListener("click",function(){
+  var tm=calc(),L=[];
+  L.push("РАСЧЁТ РАСХОДОВ НА РЕБЁНКА");
+  L.push("Имя: "+(st.name||"—"));L.push("Дети: "+(st.kids||"—"));L.push("Город: "+(st.city||"—"));L.push("");
+  CATS.forEach(function(c,i){
+    var m=num(st["m"+i]),y=num(st["y"+i]);
+    if(m||y)L.push(c+": "+fmt(m)+" в месяц"+(y?", "+fmt(y)+" в год":"")+" (итого "+fmt(m+y/12)+" в месяц)");
+  });
+  L.push("");L.push("Итого в месяц: "+fmt(tm));L.push("Итого в год: "+fmt(tm*12));L.push("");
+  L.push("ВТОРОЙ РОДИТЕЛЬ");
+  L.push("Трудоустройство: "+(st.job||"—"));L.push("Доход в месяц: "+(st.inc?fmt(num(st.inc)):"—"));
+  L.push("Платит сейчас: "+(st.pay||"—"));L.push("Соглашение или приказ: "+(st.doc||"—"));
+  if(st.more)L.push("Важно: "+st.more);
+  var t=L.join("\n"),b=this;
+  function ok(){b.textContent="Скопировано, вставьте в чат";b.classList.add("ok");setTimeout(function(){b.textContent="Скопировать расчёт";b.classList.remove("ok")},2500)}
+  function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){}a.remove()}
+  try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+});
+</script>
+</body>
+</html>
